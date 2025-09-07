@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "OnRamp" ALTER COLUMN "amount" SET DEFAULT 0;
+
+-- AlterTable
+ALTER TABLE "User" ALTER COLUMN "wallet" SET DEFAULT 100000000000;

@@ -1,7 +1,10 @@
-export default function Home() {
+
+export default function Page() {
 	return (
-		<div className="text-3xl text-green-500">
-			hi their from the bank frontend
+		<div>
+			<h1>My Store</h1>
+
+			<h2>hi their from the bank</h2>
 		</div>
 	);
 }
