@@ -32,7 +32,7 @@ export const POST = async (req: NextRequest) => {
 
       // create a url for the bank frontend 
 
-      const redirectUrl = `http://localhost:3001/deposit?userId=${bankTransaction.userId}&amount=${bankTransaction.amount}&bankTranx=${bankTransaction.id}&paytmTranx=${parsedData.data.tranxId}`;
+      const redirectUrl = `${process.env.NEXT_PUBLIC_REDIRECT_URL}/deposit?userId=${bankTransaction.userId}&amount=${bankTransaction.amount}&bankTranx=${bankTransaction.id}&paytmTranx=${parsedData.data.tranxId}`;
 
       return NextResponse.json({ message: "session created from bank", bankResponse: redirectUrl }, { status: 200 });
 

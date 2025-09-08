@@ -19,7 +19,7 @@ const Deposit = () => {
 
 	const handleChoice = async (choice: boolean) => {
 		const backResponse = await axios.post(
-			"http://localhost:3001/api/transaction/deposit",
+			`${process.env.NEXT_PUBLIC_REDIRECT_URL}/api/transaction/deposit`,
 			{
 				userId: paymentDetails.userId,
 				amount: paymentDetails.amount,
