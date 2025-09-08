@@ -26,7 +26,7 @@ export const POST = async (req: NextRequest) => {
    if (!parsedData.success) {
       return NextResponse.json({ message: "request body is invalid", data: false }, { status: 400 });
    }
-   let redirectUrl = `http://localhost:3000/onramp?userId=${parsedData.data.userId}&amount=${parsedData.data.amount}&transxId=${parsedData.data.bankTranx}&status=failed`
+   let redirectUrl = `${process.env.NEXT_PUBLIC_REDIRECT_URL}/onramp?userId=${parsedData.data.userId}&amount=${parsedData.data.amount}&transxId=${parsedData.data.bankTranx}&status=failed`
 
    try {
       if (parsedData.data.choice === "reject") {
@@ -63,7 +63,7 @@ export const POST = async (req: NextRequest) => {
             }
          })
       })
-      redirectUrl = `http://localhost:3000/onramp?userId=${parsedData.data.userId}&amount=${parsedData.data.amount}&transxId=${parsedData.data.bankTranx}&status=success`
+      redirectUrl = `${process.env.NEXT_PUBLIC_REDIRECT_URL}/onramp?userId=${parsedData.data.userId}&amount=${parsedData.data.amount}&transxId=${parsedData.data.bankTranx}&status=success`
       console.log(deductMoney, "deductMoney");
       return NextResponse.json({ message: "success", data: true, redirectUrl }, { status: 200 });
    } catch (error) {
