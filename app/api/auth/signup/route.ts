@@ -26,7 +26,7 @@ export const POST = async (req: NextRequest) => {
       if (!parsedData.success) {
          return NextResponse.json({ message: "request body is not valid", parsedData }, { status: 400 })
       }
-      console.log(parsedData.data, "request body");
+
 
 
       const createUser = await prisma.user.create({
@@ -36,7 +36,7 @@ export const POST = async (req: NextRequest) => {
             password: parsedData.data.password
          }
       })
-      console.log(createUser,"createdUser");
+
 
       return NextResponse.json({ message: "user created", data: { ...createUser, wallet: createUser.wallet.toString() } }, { status: 200 });
 

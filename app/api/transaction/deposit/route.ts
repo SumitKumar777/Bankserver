@@ -64,7 +64,7 @@ export const POST = async (req: NextRequest) => {
          })
       })
       redirectUrl = `${process.env.NEXT_PUBLIC_REDIRECT_URL}/onramp?userId=${parsedData.data.userId}&amount=${parsedData.data.amount}&transxId=${parsedData.data.bankTranx}&status=success`
-      console.log(deductMoney, "deductMoney");
+
       return NextResponse.json({ message: "success", data: true, redirectUrl }, { status: 200 });
    } catch (error) {
 

@@ -27,10 +27,10 @@ const Deposit = () => {
 				choice: choice ? "confirm" : "reject",
 			}
 		);
-		console.log(backResponse, "backresponse in the deposit in bankserver");
+
 
 		 if (window.opener) {
-			console.log(window.opener,"window opener");
+
 				window.opener.location.href = backResponse.data.redirectUrl;
 				window.close(); 
 			} else {

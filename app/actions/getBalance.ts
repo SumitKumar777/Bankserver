@@ -12,7 +12,7 @@ export const getBalance = async (id: number): Promise<bigint | null> => {
             wallet: true
          }
       })
-      console.log(usrBalance, "userbalance");
+
 
       if (!usrBalance) {
          throw new Error("userBalance not found")
